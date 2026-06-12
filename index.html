@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co-op Camp Sierra — A Cooperative Family Camp Since 1938</title>
+  <meta name="description" content="Co-op Camp Sierra has gathered families and friends in the Sierra Nevada every summer since 1938. Join us June 20–27, 2026." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">Co-op Camp Sierra</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/activities.html">Activities</a></li>
+      <li><a href="pages/twin-pines.html">Twin Pines</a></li>
+      <li><a href="pages/contact.html">Reach Us</a></li>
+      <li><a href="pages/registration.html" class="nav-cta">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO — replace the style background-image URL with your own photo -->
+  <header class="hero hero-bg tiedye-wash"
+          style="background-image: url('images/hero-camp.jpg');">
+    <!-- To add a photo: save your image as images/hero-camp.jpg (or any format)
+         and update the URL above. The tie-dye glow and dark overlay appear automatically. -->
+    <p class="hero-eyebrow">Sierra National Forest &nbsp;·&nbsp; Since 1938</p>
+    <h1 class="hero-title">Co-op Camp Sierra</h1>
+    <p class="hero-subtitle">One week. Four generations. A tradition that keeps calling you back.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="pages/registration.html">Register for 2026</a>
+      <a class="btn btn-secondary" href="pages/about.html">Our Story</a>
+    </div>
+  </header>
+
+  <!-- QUICK FACTS STRIP -->
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-item">
+        <h4>When</h4>
+        <p>June 20 – 27, 2026</p>
+      </div>
+      <div class="info-item">
+        <h4>Where</h4>
+        <p>Sierra National Forest<br>~5,000 ft · South of Yosemite</p>
+      </div>
+      <div class="info-item">
+        <h4>Who</h4>
+        <p>All ages — families, couples,<br>and solo adults alike</p>
+      </div>
+      <div class="info-item">
+        <h4>Registration</h4>
+        <p>Now open for summer 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO GALLERY — top of homepage -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="photo-grid-hero">
+      <!-- Replace src="" with your actual image paths, e.g. src="../images/potholes.jpg" -->
+      <div class="photo-block" style="height:340px;">
+        <span class="photo-block-label">Main photo — e.g. group at camp, Potholes, tie-dye session</span>
+        <!-- <img src="images/camp-main.jpg" alt="Campers at Co-op Camp Sierra"> -->
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <div class="photo-block" style="height:162px;">
+          <span class="photo-block-label">Photo — e.g. folk dancing</span>
+          <!-- <img src="images/folk-dancing.jpg" alt="Folk dancing at camp"> -->
+        </div>
+        <div class="photo-block" style="height:162px;">
+          <span class="photo-block-label">Photo — e.g. campfire / evening</span>
+          <!-- <img src="images/campfire.jpg" alt="Campfire evening"> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SNAPSHOT -->
+  <section class="section tiedye-wash">
+    <p class="section-eyebrow">About the Camp</p>
+    <h2 class="section-title">Built on cooperation.<br>Kept alive by community.</h2>
+    <p class="section-body">Since 1938, families have returned to Co-op Camp Sierra year after year — some now in their third and fourth generation. The camp was built on cooperative principles: campers of all backgrounds pitch in, share meals, lead activities, and look after one another. It's a rare thing, and once you experience it, you understand why people keep coming back.</p>
+    <p class="section-body" style="margin-top:1rem;">People of all ages and backgrounds are genuinely welcome. Singles fit in as easily as multigenerational families. And the Sierra setting — pine forests, granite peaks, mountain swimming holes — makes the whole thing feel a world apart.</p>
+    <a class="btn btn-indigo" style="margin-top:1.5rem; display:inline-block;" href="pages/about.html">Our Full Story</a>
+  </section>
+
+  <!-- ACTIVITIES BAND -->
+  <div class="band band-ink">
+    <div class="band-inner">
+      <p class="section-eyebrow">What's On</p>
+      <h2 class="section-title">A full week of activity</h2>
+      <p style="color:#c0b8d0; max-width:580px; margin-bottom:0.5rem; font-size:1rem;">From early-morning hikes to late-night singalongs — and always a hammock if you'd rather rest.</p>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--plum);"></span>
+            <h3>Tie-Dye</h3>
+          </div>
+          <p>A Co-op Camp signature. Make a shirt you'll wear for the rest of the week.</p>
+        </div>
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--sage);"></span>
+            <h3>The Potholes</h3>
+          </div>
+          <p>A mile hike to massive granite pools fed by a mountain creek. Bring your swimsuit.</p>
+        </div>
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--sky);"></span>
+            <h3>Folk Dancing</h3>
+          </div>
+          <p>A camp institution. No experience needed — just a willingness to swing your partner.</p>
+        </div>
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--rust);"></span>
+            <h3>Talent Show</h3>
+          </div>
+          <p>Take the stage or cheer from the crowd. Every act finds an enthusiastic audience.</p>
+        </div>
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--marigold);"></span>
+            <h3>Hiking</h3>
+          </div>
+          <p>Trails for every pace in one of California's finest wilderness areas.</p>
+        </div>
+        <div class="activity-card">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">
+            <span class="activity-dot" style="background:var(--indigo);"></span>
+            <h3>Campfire Singing</h3>
+          </div>
+          <p>Stars overhead, voices together. The Sierra acoustics don't hurt either.</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a class="btn btn-sage" href="pages/activities.html">See All Activities &amp; Schedule</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO ROW -->
+  <section class="section" style="padding-top:3rem; padding-bottom:0;">
+    <div class="photo-grid-3">
+      <div class="photo-block" style="height:200px;">
+        <span class="photo-block-label">Photo — e.g. tie-dye shirts</span>
+        <!-- <img src="images/tiedye.jpg" alt="Tie-dye at camp"> -->
+      </div>
+      <div class="photo-block" style="height:200px;">
+        <span class="photo-block-label">Photo — e.g. the Potholes</span>
+        <!-- <img src="images/potholes.jpg" alt="The Potholes swimming holes"> -->
+      </div>
+      <div class="photo-block" style="height:200px;">
+        <span class="photo-block-label">Photo — e.g. dining hall / meals</span>
+        <!-- <img src="images/dining.jpg" alt="Meals at camp"> -->
+      </div>
+    </div>
+    <p class="photo-caption">To add photos: save images to an <code>images/</code> folder, then uncomment the &lt;img&gt; tags above.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align:center; padding-top:4rem; padding-bottom:4rem;">
+    <p class="section-eyebrow" style="text-align:center;">Summer 2026</p>
+    <h2 class="section-title" style="max-width:560px; margin:0 auto 1rem;">Ready to come back — or come for the first time?</h2>
+    <p style="max-width:500px; margin:0 auto 2rem; color:#5a5070; font-size:1rem;">Registration is open. Spots are limited. The camp, the pines, and the people are waiting.</p>
+    <a class="btn btn-primary" href="pages/registration.html" style="font-size:0.9rem; padding:0.9rem 2.5rem;">Register for Camp 2026</a>
+    <p style="color:#9090a8; font-size:0.85rem; margin-top:1.25rem;">Questions? <a href="tel:5105950873">(510) 595-0873</a> &nbsp;·&nbsp; <a href="mailto:coopcamp1939@gmail.com">coopcamp1939@gmail.com</a></p>
+  </section>
+
+  <!-- DONATE -->
+  <div class="band band-parchment">
+    <div class="band-inner" style="text-align:center;">
+      <p class="section-eyebrow" style="text-align:center;">Support the Camp</p>
+      <h2 class="section-title" style="margin-bottom:0.75rem;">Pay Fees &amp; Donate</h2>
+      <p style="max-width:540px; margin:0 auto 1.5rem; color:#5a5070; font-size:1rem;">Use the PayPal link below to pay your camp fees, or to make a tax-deductible donation to Camp Sierra. Camp fees themselves are not tax deductible.</p>
+      <div class="paypal-box" style="margin:0 auto;">
+        <p><strong>Pay fees or donate via PayPal</strong></p>
+        <p>Camp fees are not tax deductible.</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+          <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID" />
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+                 border="0" name="submit" alt="Donate with PayPal" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-logo">Co-op Camp Sierra</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/activities.html">Activities</a>
+      <a href="pages/twin-pines.html">Twin Pines</a>
+      <a href="pages/registration.html">Registration</a>
+      <a href="pages/contact.html">Reach Us</a>
+    </nav>
+    <div class="social-links" style="justify-content:center; margin-bottom:1.25rem;">
+      <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/coopcampsierra/" target="_blank" rel="noopener">Instagram</a>
+      <a href="http://www.youtube.com/channel/UCi2rjF8sjHXyjd9L-mYlB8A" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://twitter.com/coopCampSierra" target="_blank" rel="noopener">Twitter</a>
+    </div>
+    <p><a href="tel:5105950873">(510) 595-0873</a> &nbsp;·&nbsp; <a href="mailto:coopcamp1939@gmail.com">coopcamp1939@gmail.com</a></p>
+    <p style="margin-top:0.75rem; color:#4a4060;">52000 Camp Sierra Road, Shaver Lake CA 93664 &nbsp;·&nbsp; © 2026 Co-op Camp Sierra</p>
+  </footer>
+
+</body>
+</html>

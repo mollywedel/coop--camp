@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twin Pines | Co-op Camp Sierra</title>
+  <meta name="description" content="The Twin Pines — the daily camp newspaper of Co-op Camp Sierra. Browse past issues and submit an article for the next edition." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Masthead style for the Twin Pines header */
+    .tp-masthead {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--stone);
+      letter-spacing: -0.01em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .tp-masthead em {
+      font-style: italic;
+      color: #c8b87a;
+    }
+    .tp-rule {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 1rem 0;
+    }
+    /* Year group heading in archive */
+    .archive-year {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--parchment);
+    }
+    .archive-year:first-child { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="../index.html">Co-op Camp Sierra</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="twin-pines.html" class="active">Twin Pines</a></li>
+      <li><a href="contact.html">Reach Us</a></li>
+      <li><a href="registration.html" class="nav-cta">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- Masthead hero -->
+  <header class="page-hero page-hero-bg tiedye-wash"
+          style="background-image: url('../images/twin-pines-hero.jpg'); padding-bottom:3.5rem;">
+    <p class="page-eyebrow">The Camp Newspaper</p>
+    <div class="tp-masthead">Twin <em>Pines</em></div>
+    <div class="tp-rule"></div>
+    <p style="color:#a8a0c0; font-size:0.95rem; max-width:580px; margin:0 auto;">Published daily during camp week — news, recipes, horoscopes, crosswords, and whatever else campers dream up. Browse the archive below or submit your next article.</p>
+  </header>
+
+  <!-- ARCHIVE -->
+  <section class="section tiedye-wash">
+    <p class="section-eyebrow">Archive</p>
+    <h2 class="section-title">Past Issues</h2>
+    <p class="section-body">Every issue of the Twin Pines, organized by year. Click any issue to open the PDF.</p>
+
+    <!-- ======================================================
+         HOW TO ADD ISSUES:
+         1. Save PDFs to the pdfs/ folder, e.g. pdfs/twin-pines-2025-day1.pdf
+         2. Copy a .newspaper-card block below and update:
+            - The href on the outer <a> tag
+            - The <iframe> src (for the thumbnail preview)
+            - The date, title text, and description
+         ====================================================== -->
+
+    <p class="archive-year">2025</p>
+    <div class="newspaper-grid">
+
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day1.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <!-- Thumbnail: renders a small preview of the PDF. Optional — remove iframe and use a screenshot image instead for better performance -->
+          <iframe src="../pdfs/twin-pines-2025-day1.pdf" title="Twin Pines Day 1 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+          <!-- Alternative: <img src="../images/thumbs/tp-2025-day1.jpg" alt="Twin Pines Day 1 2025"> -->
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Saturday, June 21 · Day 1</p>
+          <p class="newspaper-card-title">Twin Pines — Late Press: Welcome Edition</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">"Hippies Gather for the Longest Day of the Year..."</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day2.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <iframe src="../pdfs/twin-pines-2025-day2.pdf" title="Twin Pines Day 2 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Sunday, June 22 · Day 2</p>
+          <p class="newspaper-card-title">Spin Lines — We had hikes planned...</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">Staff profiles, swimming hole news, and the camp's crossword.</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day3.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <iframe src="../pdfs/twin-pines-2025-day3.pdf" title="Twin Pines Day 3 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Monday, June 23 · Day 3</p>
+          <p class="newspaper-card-title">Twine Spines — Ignore the various plot holes...</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">Tie-dye day, candle making, basketball dispatches, and California Condors.</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day4.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <iframe src="../pdfs/twin-pines-2025-day4.pdf" title="Twin Pines Day 4 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Tuesday, June 24 · Day 4</p>
+          <p class="newspaper-card-title">Tween Scenes — Is It Two's Day…</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">Bag lunch day, nature printing, carnival sign-up, and the goodnight dance.</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day5.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <iframe src="../pdfs/twin-pines-2025-day5.pdf" title="Twin Pines Day 5 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Wednesday, June 25 · Day 5</p>
+          <p class="newspaper-card-title">Twill Pills — We can get further from it…</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">Carnival night, lost sunglasses, charcuterie boards, and Tsan's martini recipe.</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+
+      <!-- Add more 2025 issues here as needed -->
+      <!-- Copy this block and update the href, iframe src, date, title, and description: -->
+      <!--
+      <a class="newspaper-card" href="../pdfs/twin-pines-2025-day6.pdf" target="_blank" rel="noopener">
+        <div class="newspaper-card-thumb">
+          <iframe src="../pdfs/twin-pines-2025-day6.pdf" title="Twin Pines Day 6 thumbnail" tabindex="-1" aria-hidden="true"></iframe>
+        </div>
+        <div class="newspaper-card-body">
+          <p class="newspaper-card-date">Thursday, June 26 · Day 6</p>
+          <p class="newspaper-card-title">Title here</p>
+          <p style="font-size:0.85rem; color:var(--mid); line-height:1.5; margin-top:0.3rem;">Brief description.</p>
+          <p class="newspaper-card-link">Open PDF →</p>
+        </div>
+      </a>
+      -->
+
+    </div>
+
+    <!-- Add earlier years by copying the pattern below -->
+    <!--
+    <p class="archive-year">2024</p>
+    <div class="newspaper-grid">
+      <a class="newspaper-card" href="../pdfs/twin-pines-2024-day1.pdf" target="_blank" rel="noopener">
+        ...
+      </a>
+    </div>
+    -->
+
+    <p style="font-size:0.85rem; color:var(--mid); margin-top:1.75rem;">
+      To add more issues: save PDFs to the <code>pdfs/</code> folder and copy one of the card blocks above, updating the filename, date, and description.
+    </p>
+  </section>
+
+  <!-- SUBMIT AN ARTICLE -->
+  <div class="band band-ink tiedye-wash">
+    <div class="band-inner">
+      <p class="section-eyebrow">Contribute</p>
+      <h2 class="section-title">Submit an Article</h2>
+      <p style="color:#c0b8d0; max-width:580px; font-size:1rem; margin-bottom:2rem;">Got a camp story, a recipe, a horoscope, an interview with an inanimate object? The Twin Pines wants to hear from you. Fill out the form below and it'll open a pre-addressed email to the editorial team.</p>
+
+      <div class="article-form">
+        <h3>Write for the Twin Pines</h3>
+        <p class="form-sub">Submissions go to <a href="mailto:twinpinespaper@gmail.com">twinpinespaper@gmail.com</a>. You can also text the editors at <a href="sms:4083069928">(408) 306-9928</a>.</p>
+
+        <div class="form-row">
+          <label for="author-name">Your Name</label>
+          <input type="text" id="author-name" name="author-name" placeholder="e.g. Naomi K." autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="article-title">Article Title</label>
+          <input type="text" id="article-title" name="article-title" placeholder="e.g. Interview with a Squirrel">
+        </div>
+        <div class="form-row">
+          <label for="article-body">Article</label>
+          <textarea id="article-body" name="article-body" placeholder="Write your article here. No word limit — the editors will trim if needed."></textarea>
+        </div>
+
+        <button class="btn btn-rust" type="button" onclick="submitArticle()"
+                style="background:var(--rust); color:white; font-size:0.83rem; padding:0.75rem 1.75rem; cursor:pointer;">
+          Open in Email App
+        </button>
+        <p class="form-note">Clicking the button opens your email app with the form pre-filled. You can attach photos before sending.</p>
+      </div>
+
+      <div style="margin-top:1.75rem; padding:1.25rem; background:rgba(255,255,255,0.05); border-radius:var(--radius); max-width:640px;">
+        <p style="font-size:0.88rem; color:#a09ab8;"><strong style="color:#c0b8d0;">Prefer to submit directly?</strong> Email <a href="mailto:twinpinespaper@gmail.com" style="color:var(--marigold);">twinpinespaper@gmail.com</a> or text <a href="sms:4083069928" style="color:var(--marigold);">(408) 306-9928</a> with any and all camp happenings.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-logo">Co-op Camp Sierra</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="activities.html">Activities</a>
+      <a href="twin-pines.html">Twin Pines</a>
+      <a href="registration.html">Registration</a>
+      <a href="contact.html">Reach Us</a>
+    </nav>
+    <div class="social-links" style="justify-content:center; margin-bottom:1.25rem;">
+      <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/coopcampsierra/" target="_blank" rel="noopener">Instagram</a>
+      <a href="http://www.youtube.com/channel/UCi2rjF8sjHXyjd9L-mYlB8A" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://twitter.com/coopCampSierra" target="_blank" rel="noopener">Twitter</a>
+    </div>
+    <p><a href="tel:5105950873">(510) 595-0873</a> &nbsp;·&nbsp; <a href="mailto:coopcamp1939@gmail.com">coopcamp1939@gmail.com</a></p>
+    <p style="margin-top:0.75rem; color:#4a4060;">© 2026 Co-op Camp Sierra</p>
+  </footer>
+
+  <script>
+    function submitArticle() {
+      const name  = document.getElementById('author-name').value.trim();
+      const title = document.getElementById('article-title').value.trim();
+      const body  = document.getElementById('article-body').value.trim();
+
+      if (!title && !body) {
+        alert('Please add at least an article title or some content before submitting.');
+        return;
+      }
+
+      const subject = encodeURIComponent('Twin Pines Submission' + (title ? ': ' + title : ''));
+      const emailBody = encodeURIComponent(
+        (name ? 'From: ' + name + '\n\n' : '') +
+        (title ? 'Title: ' + title + '\n\n' : '') +
+        (body || '(no body text — attach photos or add your article here)') +
+        '\n\n---\nSent via coopcamp.com/twin-pines'
+      );
+
+      window.location.href = 'mailto:twinpinespaper@gmail.com?subject=' + subject + '&body=' + emailBody;
+    }
+  </script>
+</body>
+</html>
