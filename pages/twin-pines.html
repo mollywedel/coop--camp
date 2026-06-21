@@ -7,16 +7,6 @@
   <meta name="description" content="The Twin Pines — the daily camp newspaper of Co-op Camp Sierra. Browse past issues and submit an article for the next edition." />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    /* Masthead style for the Twin Pines header */
-    .tp-masthead {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      font-weight: 800;
-      color: var(--stone);
-      letter-spacing: -0.01em;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
     .tp-masthead em {
       font-style: italic;
       color: #c8b87a;
@@ -61,12 +51,54 @@
 
   <!-- Masthead hero -->
   <header class="page-hero page-hero-bg tiedye-wash"
-          style="background-image: url('../images/twin-pines-hero.jpg'); padding-bottom:3.5rem;">
+          style="background-image: url('../images/carnival.jpeg');"
+          padding: 3.5rem 2rem 3rem;>
     <p class="page-eyebrow">The Camp Newspaper</p>
-    <div class="tp-masthead">Twin <em>Pines</em></div>
-    <div class="tp-rule"></div>
-    <p style="color:#a8a0c0; font-size:0.95rem; max-width:580px; margin:0 auto;">Published daily during camp week — news, recipes, horoscopes, crosswords, and whatever else campers dream up. Browse the archive below or submit your next article.</p>
+    <h1>Twin Pines</h1>
+    <p style="color:#a8a0c0; font-size:0.95rem; max-width:580px; margin:0 auto;">Published daily during camp week. Browse the archive below or submit your next article.</p>
   </header>
+
+    <!-- SUBMIT AN ARTICLE -->
+  <div class="band band-ink tiedye-wash">
+    <div class="band-inner">
+      <p class="section-eyebrow">Contribute</p>
+      <h2 class="section-title">Submit an Article</h2>
+      <p style="color:#c0b8d0; max-width:580px; font-size:1rem; margin-bottom:2rem;">Got a camp story, a recipe, a horoscope, an interview with an inanimate object? The Twin Pines wants to hear from you. Fill out the form below and it'll open a pre-addressed email to the editorial team.</p>
+
+      <div style="display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;">
+
+        <div class="article-form" style="flex:1; min-width:280px;">
+          <h3>Write for the Twin Pines</h3>
+          <p class="form-sub">Submissions go to <a href="mailto:twinpinespaper@gmail.com">twinpinespaper@gmail.com</a>. You can also text the editors at <a href="sms:4083069928">(408) 306-9928</a>.</p>
+          <div class="form-row">
+            <label for="author-name">Your Name</label>
+            <input type="text" id="author-name" name="author-name" placeholder="e.g. Naomi K." autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="article-title">Article Title</label>
+            <input type="text" id="article-title" name="article-title" placeholder="e.g. Interview with a Squirrel">
+          </div>
+          <div class="form-row">
+            <label for="article-body">Article</label>
+            <textarea id="article-body" name="article-body" placeholder="Write your article here. No word limit — the editors will trim if needed."></textarea>
+          </div>
+          <button class="btn btn-rust" type="button" onclick="submitArticle()"
+                  style="background:var(--rust); color:white; font-size:0.83rem; padding:0.75rem 1.75rem; cursor:pointer;">
+            Open in Email App
+          </button>
+          <p class="form-note">Clicking the button opens your email app with the form pre-filled. You can attach photos before sending.</p>
+        </div>
+
+        <img src="../images/pines-staff.jpeg" alt="Twin Pines Staff"
+             style="flex:1; min-width:280px; max-width:420px; border-radius:8px; object-fit:cover;">
+
+      </div>
+
+      <div style="margin-top:1.75rem; padding:1.25rem; background:rgba(255,255,255,0.05); border-radius:var(--radius); max-width:640px;">
+        <p style="font-size:0.88rem; color:#a09ab8;"><strong style="color:#c0b8d0;">Prefer to submit directly?</strong> Email <a href="mailto:twinpinespaper@gmail.com" style="color:var(--marigold);">twinpinespaper@gmail.com</a> or text <a href="sms:4083069928" style="color:var(--marigold);">(408) 306-9928</a> with any and all camp happenings.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ARCHIVE -->
   <section class="section tiedye-wash">
@@ -176,47 +208,7 @@
     </div>
     -->
 
-    <p style="font-size:0.85rem; color:var(--mid); margin-top:1.75rem;">
-      To add more issues: save PDFs to the <code>pdfs/</code> folder and copy one of the card blocks above, updating the filename, date, and description.
-    </p>
   </section>
-
-  <!-- SUBMIT AN ARTICLE -->
-  <div class="band band-ink tiedye-wash">
-    <div class="band-inner">
-      <p class="section-eyebrow">Contribute</p>
-      <h2 class="section-title">Submit an Article</h2>
-      <p style="color:#c0b8d0; max-width:580px; font-size:1rem; margin-bottom:2rem;">Got a camp story, a recipe, a horoscope, an interview with an inanimate object? The Twin Pines wants to hear from you. Fill out the form below and it'll open a pre-addressed email to the editorial team.</p>
-
-      <div class="article-form">
-        <h3>Write for the Twin Pines</h3>
-        <p class="form-sub">Submissions go to <a href="mailto:twinpinespaper@gmail.com">twinpinespaper@gmail.com</a>. You can also text the editors at <a href="sms:4083069928">(408) 306-9928</a>.</p>
-
-        <div class="form-row">
-          <label for="author-name">Your Name</label>
-          <input type="text" id="author-name" name="author-name" placeholder="e.g. Naomi K." autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label for="article-title">Article Title</label>
-          <input type="text" id="article-title" name="article-title" placeholder="e.g. Interview with a Squirrel">
-        </div>
-        <div class="form-row">
-          <label for="article-body">Article</label>
-          <textarea id="article-body" name="article-body" placeholder="Write your article here. No word limit — the editors will trim if needed."></textarea>
-        </div>
-
-        <button class="btn btn-rust" type="button" onclick="submitArticle()"
-                style="background:var(--rust); color:white; font-size:0.83rem; padding:0.75rem 1.75rem; cursor:pointer;">
-          Open in Email App
-        </button>
-        <p class="form-note">Clicking the button opens your email app with the form pre-filled. You can attach photos before sending.</p>
-      </div>
-
-      <div style="margin-top:1.75rem; padding:1.25rem; background:rgba(255,255,255,0.05); border-radius:var(--radius); max-width:640px;">
-        <p style="font-size:0.88rem; color:#a09ab8;"><strong style="color:#c0b8d0;">Prefer to submit directly?</strong> Email <a href="mailto:twinpinespaper@gmail.com" style="color:var(--marigold);">twinpinespaper@gmail.com</a> or text <a href="sms:4083069928" style="color:var(--marigold);">(408) 306-9928</a> with any and all camp happenings.</p>
-      </div>
-    </div>
-  </div>
 
   <footer class="site-footer">
     <span class="footer-logo">Co-op Camp Sierra</span>
