@@ -3,52 +3,64 @@ document.addEventListener('DOMContentLoaded', function() {
   const path    = window.location.pathname;
   const inPages = path.includes('/pages/');
   const root    = inPages ? '../' : './';
-  const pages   = inPages ? ''    : 'pages/';
 
+  // Build links based on whether we're in pages/ or at root
+  const home  = root + 'index.html';
+  const about = inPages ? 'about.html'        : 'pages/about.html';
+  const acts  = inPages ? 'activities.html'   : 'pages/activities.html';
+  const tp    = inPages ? 'twin-pines.html'   : 'pages/twin-pines.html';
+  const faq   = inPages ? 'faq.html'          : 'pages/faq.html';
+  const cont  = inPages ? 'contact.html'      : 'pages/contact.html';
+  const reg   = inPages ? 'registration.html' : 'pages/registration.html';
+
+  // Active page detection
   const isHome       = !inPages && (path.endsWith('index.html') || path.endsWith('/') || path.endsWith('/coop--camp/'));
   const isAbout      = path.includes('about');
   const isActivities = path.includes('activities');
   const isTwinPines  = path.includes('twin-pines');
   const isFaq        = path.includes('faq');
   const isContact    = path.includes('contact');
+  const isReg        = path.includes('registration');
 
   const a = (href, label, active) =>
     `<li><a href="${href}"${active ? ' class="active"' : ''}>${label}</a></li>`;
 
+  // ---- NAV ----
   const navEl = document.getElementById('site-nav');
   if (navEl) {
     navEl.innerHTML = `
       <nav class="site-nav" role="navigation" aria-label="Main navigation">
-        <a class="nav-logo" href="${root}index.html">Co-op Camp Sierra</a>
+        <a class="nav-logo" href="${home}">Co-op Camp Sierra</a>
         <button class="nav-toggle" aria-label="Toggle menu"
                 onclick="document.querySelector('.nav-links').classList.toggle('open')">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
-          ${a(root + 'index.html',              'Home',       isHome)}
-          ${a(root + pages + 'about.html',      'About',      isAbout)}
-          ${a(root + pages + 'activities.html', 'Activities', isActivities)}
-          ${a(root + pages + 'twin-pines.html', 'Twin Pines', isTwinPines)}
-          ${a(root + pages + 'faq.html',        'FAQ',        isFaq)}
-          ${a(root + pages + 'contact.html',    'Reach Us',   isContact)}
-          <li><a href="${root}${pages}registration.html"${REGISTRATION_OPEN ? ' class="nav-cta"' : ''}>Register</a></li>
+          ${a(home,  'Home',       isHome)}
+          ${a(about, 'About',      isAbout)}
+          ${a(acts,  'Activities', isActivities)}
+          ${a(tp,    'Twin Pines', isTwinPines)}
+          ${a(faq,   'FAQ',        isFaq)}
+          ${a(cont,  'Reach Us',   isContact)}
+          <li><a href="${reg}"${REGISTRATION_OPEN ? ' class="nav-cta"' : ''}>${REGISTRATION_OPEN ? 'Register' : 'Register'}</a></li>
         </ul>
       </nav>`;
   }
 
+  // ---- FOOTER ----
   const footerEl = document.getElementById('site-footer');
   if (footerEl) {
     footerEl.innerHTML = `
       <footer class="site-footer">
         <span class="footer-logo">Co-op Camp Sierra</span>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="${root}index.html">Home</a>
-          <a href="${root}${pages}about.html">About</a>
-          <a href="${root}${pages}activities.html">Activities</a>
-          <a href="${root}${pages}twin-pines.html">Twin Pines</a>
-          <a href="${root}${pages}faq.html">FAQ</a>
-          <a href="${root}${pages}registration.html">Registration</a>
-          <a href="${root}${pages}contact.html">Reach Us</a>
+          <a href="${home}">Home</a>
+          <a href="${about}">About</a>
+          <a href="${acts}">Activities</a>
+          <a href="${tp}">Twin Pines</a>
+          <a href="${faq}">FAQ</a>
+          <a href="${reg}">Registration</a>
+          <a href="${cont}">Reach Us</a>
         </nav>
         <div class="social-links" style="justify-content:center; margin-bottom:1.25rem;">
           <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>
