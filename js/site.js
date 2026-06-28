@@ -25,6 +25,38 @@ document.addEventListener('DOMContentLoaded', function() {
   const a = (href, label, active) =>
     `<li><a href="${href}"${active ? ' class="active"' : ''}>${label}</a></li>`;
 
+  // Inject favicon
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = root + 'favicon.png';
+  document.head.appendChild(favicon);
+
+  const appleTouchIcon = document.createElement('link');
+  appleTouchIcon.rel = 'apple-touch-icon';
+  appleTouchIcon.href = root + 'favicon.png';
+  document.head.appendChild(appleTouchIcon);
+
+  // Inject Open Graph tags
+  const pageTitle = document.body.getAttribute('data-title') || 'Co-op Camp Sierra';
+  const ogTitle   = pageTitle === 'Co-op Camp Sierra'
+    ? 'Co-op Camp Sierra'
+    : pageTitle + ' | Co-op Camp Sierra';
+
+  const ogTags = [
+    { property: 'og:title',       content: ogTitle },
+    { property: 'og:description', content: 'A cooperative family camp in the Sierra Nevada since 1938. Join us ' + CAMP_DATES + '.' },
+    { property: 'og:image',       content: 'https://www.coopcamp.com/images/carnival.jpeg' },
+    { property: 'og:url',         content: 'https://www.coopcamp.com' },
+    { property: 'og:type',        content: 'website' },
+  ];
+  ogTags.forEach(function(tag) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('property', tag.property);
+    meta.setAttribute('content', tag.content);
+    document.head.appendChild(meta);
+  });
+
   // ---- NAV ----
   const navEl = document.getElementById('site-nav');
   if (navEl) {
