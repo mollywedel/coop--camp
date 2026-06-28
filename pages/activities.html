@@ -301,7 +301,7 @@
           <table id="folk-dance-table" style="width:100%; border-collapse:collapse;
                  background:white; font-size:0.92rem;">
             <thead>
-              <tr>`;
+              <tr style="position:sticky; top:0; z-index:1;">`;
 
         // Header row from sheet (row 0)
         rows[0].forEach(function(header, i) {
@@ -309,7 +309,7 @@
             style="background:var(--ink); color:var(--stone); font-family:'Source Sans 3',sans-serif;
                    font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
                    padding:0.75rem 1rem; text-align:left; cursor:pointer; white-space:nowrap;
-                   border-bottom:2px solid rgba(255,255,255,0.1); style="position:sticky; top:0; z-index:1;"">
+                   border-bottom:2px solid rgba(255,255,255,0.1);">
             ${header} <span style="opacity:0.4; font-size:0.8em;">↕</span>
           </th>`;
         });
