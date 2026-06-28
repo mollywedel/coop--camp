@@ -218,7 +218,7 @@
         <div id="tab-past" class="schedule-panel">
           <ul class="pdf-list">
             <li>
-              <a href="../pdfs/Week_at_a_Glance_2026.pdf" target="_blank">
+              <a href="../pdfs/week-at-a-glance/2026_Week_at_a_Glance.pdf" target="_blank">
                 <span class="pdf-icon">📄</span> 2026 Week at a Glance
               </a>
             </li>
@@ -305,14 +305,15 @@
 
         // Header row from sheet (row 0)
         rows[0].forEach(function(header, i) {
-          html += `<th onclick="sortDanceTable(${i})"
-            style="background:var(--ink); color:var(--stone); font-family:'Source Sans 3',sans-serif;
-                   font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
-                   padding:0.75rem 1rem; text-align:left; cursor:pointer; white-space:nowrap;
-                   border-bottom:2px solid rgba(255,255,255,0.1);">
-            ${header} <span style="opacity:0.4; font-size:0.8em;">↕</span>
-          </th>`;
-        });
+        html += `<th onclick="sortDanceTable(${i})"
+          style="position:sticky; top:0; z-index:1;
+                 background:var(--ink); color:var(--stone); font-family:'Source Sans 3',sans-serif;
+                 font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+                 padding:0.75rem 1rem; text-align:left; cursor:pointer; white-space:nowrap;
+                 border-bottom:2px solid rgba(255,255,255,0.1);">
+          ${header} <span style="opacity:0.4; font-size:0.8em;">↕</span>
+        </th>`;
+      });
 
         html += `</tr></thead><tbody>`;
 
