@@ -26,16 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
     `<li><a href="${href}"${active ? ' class="active"' : ''}>${label}</a></li>`;
 
   // Inject favicon
-  const favicon = document.createElement('link');
-  favicon.rel = 'icon';
-  favicon.type = 'image/png';
-  favicon.href = root + 'favicon.png';
-  document.head.appendChild(favicon);
-
-  const appleTouchIcon = document.createElement('link');
-  appleTouchIcon.rel = 'apple-touch-icon';
-  appleTouchIcon.href = root + 'favicon.png';
-  document.head.appendChild(appleTouchIcon);
+  const faviconTags = [
+    { rel: 'icon',             type: 'image/x-icon', href: root + 'images/favicons/favicon.ico' },
+    { rel: 'icon',             type: 'image/png',    href: root + 'images/favicons/favicon-32x32.png',          sizes: '32x32' },
+    { rel: 'icon',             type: 'image/png',    href: root + 'images/favicons/favicon-16x16.png',          sizes: '16x16' },
+    { rel: 'apple-touch-icon', type: 'image/png',    href: root + 'images/favicons/apple-touch-icon.png',       sizes: '180x180' },
+    { rel: 'icon',             type: 'image/png',    href: root + 'images/favicons/android-chrome-192x192.png', sizes: '192x192' },
+    { rel: 'icon',             type: 'image/png',    href: root + 'images/favicons/android-chrome-512x512.png', sizes: '512x512' },
+  ];
+  faviconTags.forEach(function(tag) {
+    const link = document.createElement('link');
+    link.rel  = tag.rel;
+    link.type = tag.type;
+    link.href = tag.href;
+    if (tag.sizes) link.sizes = tag.sizes;
+    document.head.appendChild(link);
+  });
 
   // Inject Open Graph tags
   const pageTitle = document.body.getAttribute('data-title') || 'Co-op Camp Sierra';
