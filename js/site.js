@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   const inPages = window.location.pathname.includes('/pages/');
-  const root    = inPages ? '../' : '';
+  const root    = inPages ? '../' : './';
   const pages   = inPages ? ''    : 'pages/';
 
   // ---- NAV ----
