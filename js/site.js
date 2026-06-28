@@ -1,25 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  const inPages = window.location.pathname.includes('/pages/');
+  const path    = window.location.pathname;
+  const inPages = path.includes('/pages/');
   const root    = inPages ? '../' : './';
   const pages   = inPages ? ''    : 'pages/';
 
-  // ---- NAV ----
+  const isHome       = !inPages && (path.endsWith('index.html') || path.endsWith('/') || path.endsWith('/coop--camp/'));
+  const isAbout      = path.includes('about');
+  const isActivities = path.includes('activities');
+  const isTwinPines  = path.includes('twin-pines');
+  const isFaq        = path.includes('faq');
+  const isContact    = path.includes('contact');
+
+  const a = (href, label, active) =>
+    `<li><a href="${href}"${active ? ' class="active"' : ''}>${label}</a></li>`;
+
   const navEl = document.getElementById('site-nav');
   if (navEl) {
-    const path         = window.location.pathname;
-    const isHome       = path.endsWith('index.html') || path.endsWith('/');
-    const isAbout      = path.includes('about');
-    const isActivities = path.includes('activities');
-    const isTwinPines  = path.includes('twin-pines');
-    const isFaq        = path.includes('faq');
-    const isContact    = path.includes('contact');
-
-    const a = (href, label, active) =>
-      `<li><a href="${href}"${active ? ' class="active"' : ''}>${label}</a></li>`;
-
-    const regClass = REGISTRATION_OPEN ? 'class="nav-cta"' : '';
-
     navEl.innerHTML = `
       <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <a class="nav-logo" href="${root}index.html">Co-op Camp Sierra</a>
@@ -34,12 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
           ${a(root + pages + 'twin-pines.html', 'Twin Pines', isTwinPines)}
           ${a(root + pages + 'faq.html',        'FAQ',        isFaq)}
           ${a(root + pages + 'contact.html',    'Reach Us',   isContact)}
-          <li><a href="${root}${pages}registration.html" ${regClass}>Register</a></li>
+          <li><a href="${root}${pages}registration.html"${REGISTRATION_OPEN ? ' class="nav-cta"' : ''}>Register</a></li>
         </ul>
       </nav>`;
   }
 
-  // ---- FOOTER ----
   const footerEl = document.getElementById('site-footer');
   if (footerEl) {
     footerEl.innerHTML = `
