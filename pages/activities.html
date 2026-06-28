@@ -34,8 +34,7 @@
       <!-- All-camp photo placeholder -->
       <div style="flex:1; min-width:280px;">
         <div class="photo-block" style="height:300px;">
-          <span class="photo-block-label">All-camp photo 2026 — replace with your image</span>
-          <!-- <img src="../images/all-camp-photo-2026.jpg" alt="Co-op Camp Sierra 2026 all-camp photo"> -->
+          <img src="../images/all-camp-2026.jpeg" alt="Co-op Camp Sierra 2026 All Camp photo">
         </div>
         <p class="photo-caption">Co-op Camp Sierra · June 2026</p>
       </div>
@@ -179,15 +178,11 @@
       <!-- HOW TO CONNECT YOUR SHEET:
            1. Open your Google Sheet → File → Share → Publish to web → Embed tab → Publish
            2. Copy the embed src URL and paste it below replacing YOUR_SHEET_ID -->
-      <div class="pdf-embed-wrap">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0BtVHKw7xdshpxbyjkAMTdDNuRNra2U65hUg5G9_zlumrFe7lcjNc3Ay40GiPJD98UaQq-yUXNDBj/pubhtml?widget=true&amp;headers=false"
-                title="Co-op Camp Folk Dancing list"
-                loading="lazy"
-                style="height:700px;">
-        </iframe>
+      <div id="folk-dance-table-wrap">
+        <p style="color:#a09ab8; font-size:0.9rem;">Loading dances...</p>
       </div>
       <p style="font-size:0.82rem; color:var(--mid); margin-top:0.75rem;">
-        <a href="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit" target="_blank" rel="noopener" style="color:var(--indigo); font-weight:700;">
+        <a href="https://docs.google.com/spreadsheets/d/15mP0QLJzcyEkKL3hYo8Vx6ahYeGov76PT9l7dgzMuzU/edit?usp=sharing" target="_blank" rel="noopener" style="color:var(--indigo); font-weight:700;">
           Open the full spreadsheet in a new tab ↗
         </a>
       </p>
@@ -272,6 +267,114 @@
 
   <script src="../js/config.js"></script>
   <script src="../js/site.js"></script>
+
+  <script>
+  (function() {
+    const wrap = document.getElementById('folk-dance-table-wrap');
+    if (!wrap) return;
+
+    const url = 'https://sheets.googleapis.com/v4/spreadsheets/'
+      + FOLK_DANCE_SHEET_ID
+      + '/values/'
+      + encodeURIComponent(FOLK_DANCE_RANGE)
+      + '?key=' + SHEETS_API_KEY;
+
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        const rows = data.values;
+        if (!rows || rows.length < 2) {
+          wrap.innerHTML = '<p style="color:#a09ab8;">No dance data found.</p>';
+          return;
+        }
+
+        // Search box
+        let html = `
+          <div style="margin-bottom:1rem;">
+            <input type="text" id="dance-search"
+              placeholder="Search dances, countries..."
+              style="width:100%; max-width:400px; font-family:'Source Sans 3',sans-serif;
+                     font-size:0.95rem; padding:0.6rem 0.9rem; border:1px solid #d0c8bc;
+                     border-radius:6px; background:var(--stone); color:var(--ink);">
+          </div>
+          <div style="overflow-x:auto; border-radius:var(--radius); box-shadow:var(--shadow);">
+          <table id="folk-dance-table" style="width:100%; border-collapse:collapse;
+                 background:white; font-size:0.92rem;">
+            <thead>
+              <tr>`;
+
+        // Header row from sheet (row 0)
+        rows[0].forEach(function(header, i) {
+          html += `<th onclick="sortDanceTable(${i})"
+            style="background:var(--ink); color:var(--stone); font-family:'Source Sans 3',sans-serif;
+                   font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+                   padding:0.75rem 1rem; text-align:left; cursor:pointer; white-space:nowrap;
+                   border-bottom:2px solid rgba(255,255,255,0.1);">
+            ${header} <span style="opacity:0.4; font-size:0.8em;">↕</span>
+          </th>`;
+        });
+
+        html += `</tr></thead><tbody>`;
+
+        // Data rows (skip header row 0)
+        rows.slice(1).forEach(function(row, i) {
+          const bg = i % 2 === 0 ? 'white' : 'var(--stone)';
+          html += `<tr style="background:${bg};">`;
+          row.forEach(function(cell, j) {
+            let content = cell || '';
+            // If it looks like a URL, make it a link
+            if (content.startsWith('http')) {
+              content = `<a href="${content}" target="_blank" rel="noopener"
+                style="color:var(--indigo); font-weight:600; font-size:0.82rem;">
+                Watch ↗</a>`;
+            }
+            html += `<td style="padding:0.6rem 1rem; border-bottom:1px solid var(--parchment);
+                         color:var(--ink); line-height:1.4;">${content}</td>`;
+          });
+          // Fill empty cells if row is shorter than header
+          for (let k = row.length; k < rows[0].length; k++) {
+            html += `<td style="padding:0.6rem 1rem; border-bottom:1px solid var(--parchment);"></td>`;
+          }
+          html += `</tr>`;
+        });
+
+        html += `</tbody></table></div>`;
+        wrap.innerHTML = html;
+
+        // Search filter
+        document.getElementById('dance-search').addEventListener('input', function() {
+          const term = this.value.toLowerCase();
+          document.querySelectorAll('#folk-dance-table tbody tr').forEach(function(row) {
+            row.style.display = row.textContent.toLowerCase().includes(term) ? '' : 'none';
+          });
+        });
+      })
+      .catch(function(err) {
+        wrap.innerHTML = '<p style="color:#a09ab8;">Could not load dance list — '
+          + '<a href="https://docs.google.com/spreadsheets/d/' + FOLK_DANCE_SHEET_ID + '" '
+          + 'target="_blank" rel="noopener" style="color:var(--marigold);">open the spreadsheet directly ↗</a></p>';
+      });
+
+    // Sort function
+    window.sortDanceTable = function(colIndex) {
+      const table = document.getElementById('folk-dance-table');
+      const tbody = table.querySelector('tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      const asc   = table.dataset.sortCol == colIndex && table.dataset.sortDir === 'asc';
+      rows.sort(function(a, b) {
+        const aText = a.cells[colIndex] ? a.cells[colIndex].textContent.trim() : '';
+        const bText = b.cells[colIndex] ? b.cells[colIndex].textContent.trim() : '';
+        return asc ? bText.localeCompare(aText) : aText.localeCompare(bText);
+      });
+      rows.forEach(function(r, i) {
+        r.style.background = i % 2 === 0 ? 'white' : 'var(--stone)';
+        tbody.appendChild(r);
+      });
+      table.dataset.sortCol = colIndex;
+      table.dataset.sortDir = asc ? 'desc' : 'asc';
+    };
+  })();
+  </script>
 
 </body>
 </html>
