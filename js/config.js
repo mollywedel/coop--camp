@@ -6,3 +6,7 @@ const CAMP_PHONE       = '(510) 595-0873';
 const CAMP_PHONE_LINK  = 'tel:5105950873';
 const CAMP_EMAIL       = 'coopcamp1939@gmail.com';
 const CAMP_ADDRESS     = '52050 Huntington Lake Road, Big Creek, CA 93605';
+
+const SHEETS_API_KEY = 'AIzaSyB68HiB97y_P8g0jC-BHoh0eviu1zizjKA';
+const FOLK_DANCE_SHEET_ID = '15mP0QLJzcyEkKL3hYo8Vx6ahYeGov76PT9l7dgzMuzU';
+const FOLK_DANCE_RANGE = 'Dance Overview!A:C'; // adjust if your tab/columns differ

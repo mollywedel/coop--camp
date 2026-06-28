@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <a href="${acts}">Activities</a>
           <a href="${tp}">Twin Pines</a>
           <a href="${faq}">FAQ</a>
-          <a href="${reg}">Registration</a>
           <a href="${cont}">Reach Us</a>
+          <a href="${reg}">Registration</a>
         </nav>
         <div class="social-links" style="justify-content:center; margin-bottom:1.25rem;">
           <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>
