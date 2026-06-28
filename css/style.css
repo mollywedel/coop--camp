@@ -167,7 +167,9 @@ img { max-width: 100%; height: auto; display: block; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 0.9rem; padding: 0.6rem 0.5rem; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-links a { font-size: 0.9rem; padding: 0.6rem 0.75rem; border-radius: 6px; border-bottom: none; }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-links li:last-child { border-bottom: none; }
 }
 
 /* --- Hero --- */
@@ -687,7 +689,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav-cta:hover { background: #a84a20; transform: translateY(-1px); }
 @media (max-width: 720px) {
-  .nav-cta { margin-left: 0; margin-top: 0.25rem; width: fit-content; }
+  .nav-cta { margin-left: 0; margin-top: 0.25rem; display: inline-block; width: auto; }
 }
 
 /* --- Hero with background image --- */
