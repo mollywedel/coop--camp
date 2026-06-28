@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Co-op Camp Sierra</title>
+  <meta name="description" content="Frequently asked questions about Co-op Camp Sierra — where we stay, what we eat, who comes, and what makes it special." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/config.js"></script>
+  <style>
+    .faq-list { max-width: 740px; margin-top: 2rem; }
+    .faq-item {
+      border-bottom: 1px solid var(--parchment);
+      padding: 1.25rem 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--parchment); }
+    .faq-question {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      user-select: none;
+      padding-right: 0.25rem;
+    }
+    .faq-question:hover { color: var(--indigo); }
+    .faq-toggle {
+      font-size: 1.2rem;
+      color: var(--mid);
+      flex-shrink: 0;
+      line-height: 1.4;
+      transition: transform 0.2s;
+    }
+    .faq-answer {
+      display: none;
+      padding-top: 0.75rem;
+      font-size: 1rem;
+      color: #3a3248;
+      line-height: 1.75;
+      max-width: 640px;
+    }
+    .faq-answer a { color: var(--indigo); font-weight: 600; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    .faq-category {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin: 2.5rem 0 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--parchment);
+    }
+    .faq-category:first-child { margin-top: 0; }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <header class="page-hero page-hero-bg tiedye-wash"
+          style="background-image: url('../images/carnival.jpeg');">
+    <p class="page-eyebrow">Questions</p>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know before your first (or fiftieth) summer at camp.</p>
+  </header>
+
+  <section class="section tiedye-wash">
+
+    <div class="faq-list">
+
+      <!-- ABOUT THE CAMP -->
+      <p class="faq-category">About the Camp</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What is Co-op Camp Sierra?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Co-op Camp Sierra is a cooperative family camp that has been gathering in the Sierra Nevada every summer since 1938 — making 2027 our 89th year. The camp was originally connected to the co-op grocery store movement and was built on cooperative principles: campers of all backgrounds pitch in, share meals, lead activities, and look after one another.</p>
+          <p style="margin-top:0.75rem;">It's a multigenerational community. We have campers in their second, third, and even fourth generation. New campers quickly feel the magic and keep coming back.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Where is camp located?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Camp Sierra is located in the Sierra National Forest at nearly 5,000 feet elevation — midway between Huntington and Shaver Lakes, south of Yosemite. The address is 52000 Camp Sierra Road, Shaver Lake, CA 93664. It's about 90 minutes from Fresno and roughly 4 hours from the Bay Area.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Who comes to camp? Is it just for families?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Everyone is genuinely welcome — families with young children, older kids, teenagers, adults in their 20s through 90s, couples, and single adults. Camp is multigenerational by nature and single adults find their footing just as easily as families. There's no typical camper.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          When does camp run?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Camp 2027 runs <strong>June 19–26, 2027</strong> — our 90th year! Camp typically runs for one week in late June each summer. You can attend the full week or come for a shorter per-diem stay.</p>
+        </div>
+      </div>
+
+      <!-- LODGING & MEALS -->
+      <p class="faq-category">Lodging &amp; Meals</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Where do we sleep?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Camp Sierra has several accommodation options at different price points:</p>
+          <ul style="margin:0.75rem 0 0 1.25rem; color:#3a3248; line-height:1.9;">
+            <li><strong>Camping</strong> — tent sites in the camp grounds</li>
+            <li><strong>Cabins (no restroom)</strong> — rustic cabins, shared bathroom nearby</li>
+            <li><strong>Cabins (with restroom)</strong> — private cabin with bathroom</li>
+            <li><strong>Lodge</strong> — lodge-style rooms</li>
+            <li><strong>Duplex</strong> — larger unit suited for groups of 7+</li>
+          </ul>
+          <p style="margin-top:0.75rem;">All options include meals. See the <a href="registration.html">Registration page</a> for the full fee schedule.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do we cook our own meals?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>No — meals are prepared by the Camp Sierra kitchen staff and are included in your registration fee. Breakfast, lunch, and dinner are served daily in the Dining Hall. A typical week features everything from scrambled eggs and biscuits &amp; gravy to barrel-smoked tri-tip and baked chicken. Vegetarian options are available for registered vegetarian campers.</p>
+          <p style="margin-top:0.75rem;">On All-Day Hike Day (Tuesday), everyone packs a bag lunch from the Dining Hall. Friday night is "Tip Night" — a tradition of showing appreciation to the kitchen staff who work incredibly hard all week.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is the water safe to drink?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes. Camp Sierra operates its own water and sewer system, overseen by a certified Water Master and monitored according to California state requirements. The water is tested regularly. Filtered water is also available at the tables in the Dining Hall and at the "Hydration Station" on the Store Porch.</p>
+        </div>
+      </div>
+
+      <!-- ACTIVITIES -->
+      <p class="faq-category">Activities</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What is there to do at camp?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Quite a lot — see the full <a href="activities.html">Activities page</a> for the complete list. Camp staples include tie-dye, folk dancing, the Potholes swimming holes, the Talent Show, the Carnival, and the Live &amp; Silent Auction. On top of those, campers organize their own activities each week at the Sunday planning meeting: recent years have included Zydeco lessons, herb walks, ukulele sessions, trivia, a challah bake, volleyball, board games, and more.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What are the Potholes?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>The Potholes are a series of massive granite pools fed by a rushing mountain creek, about a mile hike from camp. You can swim, slide, and float in cool Sierra water. It's one of the most beloved spots at camp — come prepared with a swimsuit and water shoes, and be aware of trail conditions (check the daily Twin Pines newsletter for updates).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is there childcare?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Co-op Camp childcare is available for children age 2 and up, Monday through Friday from 9 AM to 12 PM at the playground. On All-Day Hike Day (Thursday), childcare ends at 10:30 AM. Sign-ups happen Sunday at lunch (12:15 PM) at the playground. Parents are encouraged to volunteer for an hour or two during the week to help out.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do I have to participate in everything?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Not at all. Participation is always by choice. Many campers love being busy from morning to night; others prefer a slow week of coffee conversations, hammock time, and an evening dance. There is genuinely a pace here for everyone.</p>
+        </div>
+      </div>
+
+      <!-- COOPERATIVE MEMBERSHIP -->
+      <p class="faq-category">Cooperative Membership &amp; Fees</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What does "co-op" mean? Do I have to do anything?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>The cooperative spirit is at the heart of camp — campers pitch in to make the week happen together. If you register as a <strong>member</strong>, you contribute 5 hours of time toward camp administration or activities during the week and receive a discounted rate on your fees. It could be helping set up an activity, assisting in the kitchen, or staffing a carnival booth.</p>
+          <p style="margin-top:0.75rem;">Non-members are completely welcome and pay the standard rate. Many first-time campers start as non-members and become members in later years.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How much does camp cost?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Fees vary by accommodation type (camping, cabin, lodge, duplex), age, and member vs. non-member status. All fees include meals and lodging for the full week. There are also per-diem and day-use rates for shorter stays.</p>
+          <p style="margin-top:0.75rem;">See the full fee schedule on the <a href="registration.html">Registration page</a>. A non-refundable $50 per-person deposit is included with payment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Can I come for just a few days?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes — per-diem rates are available for partial-week stays, covering meals and lodging for each day you attend. There are also day-use rates ($30/person/day) if you want to participate in activities without meals or overnight accommodations. See the <a href="registration.html">Registration page</a> for rates.</p>
+        </div>
+      </div>
+
+      <!-- PRACTICAL INFO -->
+      <p class="faq-category">Practical Info</p>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is there WiFi at camp?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>There is a camp WiFi network — <strong>Camp Sierra Guest</strong>, no password required — though the signal generally reaches only the upper camp area and is strongest near the Store Porch. We'd encourage you to think twice before taking out your phone too often; part of the magic of camp is being present with the people around you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What are the quiet hours?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Camp enjoys quiet hours from 10 PM to 7 AM. This is a longstanding tradition and helps everyone — especially families with young children — get good rest between full days of activity.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is smoking allowed at camp?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>The BBQ area and the flagpole fire pit are the only areas where smoking is permitted. No candles or open flames are allowed elsewhere — we're in a fire-sensitive national forest and take this seriously.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is there a camp store?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! The Camp Sierra Store is open daily during camp week, typically 2–3 PM and 7:30–9 PM (with some variation — check the daily Twin Pines for hours). Ice cream is a beloved camp-store tradition.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Are there any wildlife concerns?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We're in the Sierra Nevada, so yes — rattlesnakes have been spotted on the Potholes trail and around camp, and other wildlife is part of the setting. Keep your distance from any snakes you see; they generally want to avoid people. The Twin Pines newsletter will post any specific advisories during the week. Emergency procedures: if you hear a siren, please report to the flagpole.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          I have more questions — who do I contact?
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We'd love to hear from you! Call us at <a href="tel:5105950873">(510) 595-0873</a> or email <a href="mailto:coopcamp1939@gmail.com">coopcamp1939@gmail.com</a>. You can also find our community on <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="band band-ink" style="text-align:center;">
+    <div class="band-inner">
+      <p class="section-eyebrow" style="text-align:center;">Our 90th Year</p>
+      <h2 class="section-title">Camp 2027 · June 19–26</h2>
+      <p style="color:#c0b8d0; max-width:460px; margin:0 auto 1.75rem; font-size:1rem;">Come find out what everyone keeps coming back for.</p>
+      <a class="btn btn-primary" href="registration.html">Registration Info</a>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script>
+    function toggleFaq(questionEl) {
+      const item = questionEl.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

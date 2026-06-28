@@ -4,48 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registration | Co-op Camp Sierra</title>
-  <meta name="description" content="Register for Co-op Camp Sierra 2026 — June 20-27. View the fee schedule and sign up online." />
+  <meta name="description" content="Register for Co-op Camp Sierra 2027 — June 19-26. View the fee schedule and sign up online." />
   <link rel="stylesheet" href="../css/style.css" />
+<script src="../js/config.js"></script>
 </head>
 <body>
 
-  <nav class="site-nav" role="navigation" aria-label="Main navigation">
-    <a class="nav-logo" href="../index.html">Co-op Camp Sierra</a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="activities.html">Activities</a></li>
-      <li><a href="twin-pines.html">Twin Pines</a></li>
-      <li><a href="contact.html">Reach Us</a></li>
-      <li><a href="registration.html" class="nav-cta active">Register</a></li>
-    </ul>
-  </nav>
+  <div id="site-nav"></div>
 
-  <header class="page-hero">
-    <p class="page-eyebrow">Co-op Camp Sierra · 2026</p>
+  <header class="page-hero page-hero-bg tiedye-wash"
+          style="background-image: url('../images/carnival.jpeg');">
+    <p class="page-eyebrow">Co-op Camp Sierra</p>
     <h1>Registration</h1>
-    <p>June 20 – 27, 2026. Two steps to secure your spot.</p>
+    <p id="header-subtitle">June 20 – 27, 2026. Two steps to secure your spot.</p>
   </header>
 
   <!-- ======================================================================
-       REGISTRATION TOGGLE
-       To switch between "open" and "closed" states, change ONLY the line below:
-       - Set to true  → shows registration steps, PayPal box, and live Google Form
-       - Set to false → shows a "registration not yet open" notice instead,
-                        and labels the fee schedule as last year's pricing
+       REGISTRATION TOGGLE — change ONLY this one line:
+       true  = registration open (shows steps, PayPal, Google Form)
+       false = registration closed (shows "not open yet" notice, last year's fees)
      ====================================================================== -->
-  <script>
-    const REGISTRATION_OPEN = false;
-  </script>
 
   <!-- HOW TO REGISTER — shown only when REGISTRATION_OPEN is true -->
   <section class="section tiedye-wash" id="how-to-register">
     <p class="section-eyebrow">How to Register</p>
     <h2 class="section-title">Two steps</h2>
-
     <div class="reg-steps">
       <div class="step-card">
         <div class="step-num">1</div>
@@ -67,7 +50,6 @@
         </form>
       </div>
     </div>
-
     <p style="margin-top:1.25rem; color:#5a5070; font-size:0.95rem;">To reserve your space or if you have questions, call <a href="tel:5105950873"><strong>(510) 595-0873</strong></a> or email <a href="mailto:coopcamp1939@gmail.com"><strong>coopcamp1939@gmail.com</strong></a>.</p>
   </section>
 
@@ -75,7 +57,7 @@
   <section class="section tiedye-wash" id="not-open-notice" style="display:none;">
     <p class="section-eyebrow">Registration</p>
     <h2 class="section-title">Not open yet</h2>
-    <div class="pricing-note-block" style="background:rgba(46,125,166,0.10); border-left-color:var(--sky); max-width:620px;">
+    <div class="pricing-note-block" style="background:rgba(46,125,166,0.18); border-left-color:var(--sky); max-width:620px; color:var(--ink);">
       <strong>Registration for summer 2027 isn't open yet.</strong> Check back soon — we'll post the link here and announce it by email and on our Facebook group as soon as it's live.
     </div>
     <p style="margin-top:1.25rem; color:#5a5070; font-size:0.95rem;">Questions in the meantime? Call <a href="tel:5105950873"><strong>(510) 595-0873</strong></a> or email <a href="mailto:coopcamp1939@gmail.com"><strong>coopcamp1939@gmail.com</strong></a>.</p>
@@ -88,7 +70,6 @@
       <h2 class="section-title" id="fee-schedule-title">2026 Fee Schedule</h2>
       <p style="color:#c0b8d0; font-size:0.95rem; margin-bottom:0.5rem;" id="fee-schedule-sub">All fees include meals and lodging for the full week unless noted.</p>
 
-      <!-- "Last year's pricing" notice — shown only when REGISTRATION_OPEN is false -->
       <div class="pricing-note-block" id="last-year-notice" style="display:none; background:rgba(212,136,42,0.14); border-left-color:var(--marigold);">
         <strong>These were last year's prices.</strong> We'll update this page with 2027 pricing soon!
       </div>
@@ -99,7 +80,6 @@
 
       <p class="pricing-label">Weekly Rates</p>
       <div class="pricing-grid">
-
         <div class="pricing-card">
           <h3>Camping</h3>
           <div class="price-row"><span class="price-label">Adults</span><span class="price-val">$698 / $648*</span></div>
@@ -108,7 +88,6 @@
           <div class="price-row"><span class="price-label">Kids (5–10)</span><span class="price-val">$434</span></div>
           <div class="price-row"><span class="price-label">Kids under 5</span><span class="price-val">Free</span></div>
         </div>
-
         <div class="pricing-card" style="border-top-color:var(--rust);">
           <h3>Cabin — no restroom</h3>
           <div class="price-row"><span class="price-label">Adults</span><span class="price-val">$803 / $753*</span></div>
@@ -116,7 +95,6 @@
           <div class="price-row"><span class="price-label">Kids (5–10)</span><span class="price-val">$515</span></div>
           <div class="price-row"><span class="price-label">Kids under 5</span><span class="price-val">Free</span></div>
         </div>
-
         <div class="pricing-card" style="border-top-color:var(--plum);">
           <h3>Cabin — with restroom</h3>
           <div class="price-row"><span class="price-label">Adults</span><span class="price-val">$900 / $850*</span></div>
@@ -124,7 +102,6 @@
           <div class="price-row"><span class="price-label">Kids (5–10)</span><span class="price-val">$600</span></div>
           <div class="price-row"><span class="price-label">Kids under 5</span><span class="price-val">Free</span></div>
         </div>
-
         <div class="pricing-card" style="border-top-color:var(--sage);">
           <h3>Lodge</h3>
           <div class="price-row"><span class="price-label">Adults</span><span class="price-val">$850 / $800*</span></div>
@@ -132,7 +109,6 @@
           <div class="price-row"><span class="price-label">Kids (5–10)</span><span class="price-val">$550</span></div>
           <div class="price-row"><span class="price-label">Kids under 5</span><span class="price-val">Free</span></div>
         </div>
-
         <div class="pricing-card" style="border-top-color:var(--marigold);">
           <h3>Duplex <span style="font-size:0.78rem;font-weight:400;opacity:0.7;">(min. 7 people)</span></h3>
           <div class="price-row"><span class="price-label">Adults</span><span class="price-val">$900 / $850*</span></div>
@@ -140,7 +116,6 @@
           <div class="price-row"><span class="price-label">Kids (5–10)</span><span class="price-val">$600</span></div>
           <div class="price-row"><span class="price-label">Kids under 5</span><span class="price-val">Free</span></div>
         </div>
-
       </div>
 
       <p class="pricing-label">Per Diem Rates <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.82rem;color:#7060a0;">(include meals &amp; lodging)</span></p>
@@ -170,7 +145,6 @@
           <div class="price-row"><span class="price-label">Per person / day</span><span class="price-val">$30</span></div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -191,26 +165,7 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <span class="footer-logo">Co-op Camp Sierra</span>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="activities.html">Activities</a>
-      <a href="folk-dancing.html">Folk Dancing</a>
-      <a href="twin-pines.html">Twin Pines</a>
-      <a href="registration.html">Registration</a>
-      <a href="contact.html">Reach Us</a>
-    </nav>
-    <div class="social-links" style="justify-content:center; margin-bottom:1.25rem;">
-      <a href="http://www.facebook.com/groups/51711487635/" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.instagram.com/coopcampsierra/" target="_blank" rel="noopener">Instagram</a>
-      <a href="http://www.youtube.com/channel/UCi2rjF8sjHXyjd9L-mYlB8A" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://twitter.com/coopCampSierra" target="_blank" rel="noopener">Twitter</a>
-    </div>
-    <p><a href="tel:5105950873">(510) 595-0873</a> &nbsp;·&nbsp; <a href="mailto:coopcamp1939@gmail.com">coopcamp1939@gmail.com</a></p>
-    <p style="margin-top:0.75rem; color:#4a4060;">© 2026 Co-op Camp Sierra</p>
-  </footer>
+  <div id="site-footer"></div>
 
   <script>
     if (!REGISTRATION_OPEN) {
@@ -219,7 +174,8 @@
       document.getElementById('online-form-section').style.display = 'none';
       document.getElementById('last-year-notice').style.display = 'block';
       document.getElementById('fee-schedule-title').textContent = '2026 Fee Schedule (Last Year)';
-      document.getElementById('fee-schedule-sub').textContent = 'These were last year\'s prices, shown for reference.';
+      document.getElementById('fee-schedule-sub').textContent = "These were last year's prices, shown for reference.";
+      document.getElementById('header-subtitle').textContent = 'Summer 2027 · June 19–26 · Check back soon for registration.';
     }
   </script>
 
