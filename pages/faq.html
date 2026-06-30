@@ -319,39 +319,20 @@
 
   <script src="../js/config.js"></script>
   <script src="../js/site.js"></script>
-
-  <script>
-  document.getElementById('faq-year-blurb').textContent = CAMP_YEAR + ' our ' + CAMP_YEAR_NUMBER + ' year';
-  </script>
-
   <script>
     document.getElementById('faq-year-blurb').textContent = CAMP_YEAR + ' our ' + CAMP_YEAR_NUMBER + ' year';
     document.getElementById('faq-cta-eyebrow').textContent = 'Our ' + CAMP_YEAR_NUMBER + ' Year';
-
-    const faqBtn = document.getElementById('faq-register-btn');
-    if (REGISTRATION_OPEN) {
-      faqBtn.textContent = 'Register for ' + CAMP_YEAR;
-    } else {
-      faqBtn.textContent = 'Registration info';
-      faqBtn.style.background = 'var(--mid)';
-    }
-  </script>
-
-  <script>
-    document.getElementById('faq-year-blurb').textContent = CAMP_YEAR + ' our ' + CAMP_YEAR_NUMBER + ' year';
-    document.getElementById('faq-cta-eyebrow').textContent = 'Our ' + CAMP_YEAR_NUMBER + ' Year';
-
-    const faqBtn = document.getElementById('faq-register-btn');
-    if (REGISTRATION_OPEN) {
-      faqBtn.textContent = 'Register for ' + CAMP_YEAR;
-    } else {
-      faqBtn.textContent = 'Registration info';
-      faqBtn.style.background = 'var(--mid)';
-    }
-
     document.getElementById('faq-camp-dates-year').innerHTML = '<strong>' + CAMP_DATES + '</strong>';
     document.getElementById('faq-camp-dates-blurb').textContent = 'our ' + CAMP_YEAR_NUMBER + ' year';
-  </script> 
+
+    const faqBtn = document.getElementById('faq-register-btn');
+    if (REGISTRATION_OPEN) {
+      faqBtn.textContent = 'Register for ' + CAMP_YEAR;
+    } else {
+      faqBtn.textContent = 'Registration info';
+      faqBtn.style.background = 'var(--mid)';
+    }
+  </script>
 
 </body>
 </html>
